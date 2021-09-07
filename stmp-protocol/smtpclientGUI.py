@@ -16,7 +16,7 @@ class Login(QDialog):
 
     def clickme(self):
         if self.to.text() != '' or self.fromlabel != '' or self.subject != '' or self.message != '':
-            smtpclient.sendermail(self.fromlabel.text(), self.to.text(), self.subject.text(), self.message.text(),"127.0.0.1",1234)
+            smtpclient.sendermail(self.fromlabel.text(), self.to.text().split(','), self.subject.text(), self.message.text(),"127.0.0.1",1234)
         else:
             print('datos incompletos')
 
